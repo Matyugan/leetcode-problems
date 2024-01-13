@@ -11,6 +11,7 @@ Output: [9,4]
 Explanation: [4,9] is also accepted.
 */
 
+/* O(n^2) */
 function intersection(nums1, nums2) {
   return [...new Set(nums1.filter(item => nums2.includes(item)))]
 }
