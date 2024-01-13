@@ -13,5 +13,20 @@ Explanation: [4,9] is also accepted.
 
 /* O(n^2) */
 function intersection(nums1, nums2) {
-  return [...new Set(nums1.filter(item => nums2.includes(item)))]
+  return [...new Set(nums1.filter((item) => nums2.includes(item)))];
 }
+
+/* O(n) */
+function intersectionSec(nums1, nums2) {
+  const collection1 = new Set(nums1);
+  const collection2 = new Set(nums2);
+
+  const resultArr = [];
+
+  for (const num of collection1) {
+    if (collection2.has(num)) resultArr.push(num);
+  }
+
+  return resultArr;
+}
+
